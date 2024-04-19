@@ -1,43 +1,57 @@
 import Button from "@/components/Button/Button"
 import Modal from "@/components/Modal/Modal"
+import Sidebar from "@/components/SideBar/Sidebar";
 import Switch from "@/components/Switch/Switch"
 import Typography from "@/components/Typography/Typography";
 import { useState } from "react";
 
+
+// Teste de componentes 
 const App = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
-      <div className=" mx-auto my-0 w-1/5 flex justify-center">
-        <Button className="m-2 " onClick={() => setIsOpen(true)}>Abrir Modal</Button>
-        <div className="w-9 flex flex-col gap-1 justify-start">
-          <Switch />
+      <div className=" bg-gray-100">
+        <Sidebar/>
+        <main className="w-[calc(100%-3.73rem)] ml-auto">
+          <div className="2xl:container mx-auto space-y-6">
+            <div className="h-16 border-b border-gray-300/40 dark:border-gray-700">
 
+            </div>
+            <div className="h-96 flex justify-center items-center rounded-2xl border border-dashed border-gray-300/40">
+              <span className="text-gray-500">Conteudo</span>
+              <div>
+                <Button className="m-2 " onClick={() => setIsOpen(true)}>Abrir Modal</Button>
+              </div>
 
+            </div>
+          </div>
+        </main>
+        <div >
+          <Modal isOpen={isOpen} onClose={() => setIsOpen(false)} title="Titulo">
+            <Typography>
+              Today, every company I talk to wants to implement a design system from
+              scratch. Unfortunately, the details of a design system are not
+              explored, so often they are not used to the maximum to create a useful
+              user experience.
+            </Typography>
+            <Typography>
+              New designers can take a look at any of the design patterns listed
+              below to learn best practices and make informed design decisions on
+              their projects.
+            </Typography>
+            <div className=" flex flex-col gap-3">
+              <Button onClick={() => setIsOpen(false)}>Primary Button</Button>
+              <Button variant="secondary" onClick={() => setIsOpen(false)}>
+                Secondary Button
+              </Button>
+            </div>
+          </Modal>
         </div>
       </div>
-      <div className=" ">
-        <Modal isOpen={isOpen} onClose={() => setIsOpen(false)} title="Nathan">
-          <Typography>
-            Today, every company I talk to wants to implement a design system from
-            scratch. Unfortunately, the details of a design system are not
-            explored, so often they are not used to the maximum to create a useful
-            user experience.
-          </Typography>
-          <Typography>
-            New designers can take a look at any of the design patterns listed
-            below to learn best practices and make informed design decisions on
-            their projects.
-          </Typography>
-          console.log("OI")
-          <div className=" flex flex-col gap-3">
-            <Button onClick={() => setIsOpen(false)}>Primary Button</Button>
-            <Button variant="secondary" onClick={() => setIsOpen(false)}>
-              Secondary Button
-            </Button>
-          </div>
-        </Modal>
-      </div>
+
+
+
 
     </>
   )
