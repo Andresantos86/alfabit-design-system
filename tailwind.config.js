@@ -43,13 +43,25 @@ module.exports = {
       9: 'var(--spacing-4xl) /* 56px */',
     },
     fontSize: {
-      xs: 'var(--font-xs)',
-      sm: 'var(--font-sm)',
-      md: 'var(--font-md)',
-      lg: 'var(--font-lg)',
-      xl: 'var(--font-xl)',
+      xs: '.75rem',     // 12px
+      sm: '.875rem',    // 14px
+      tiny: '.875rem',  // 14px
+      base: '1rem',     // 16px
+      lg: '1.125rem',   // 18px
+      xl: '1.25rem',    // 20px
+      '2xl': '1.5rem',    // 24px
+      '3xl': '1.875rem',  // 30px
+      '4xl': '2.25rem',   // 36px
+      '5xl': '3rem',      // 48px
+      '6xl': '4rem',      // 64px
+      '7xl': '5rem',      // 80px
+      '8xl': '6rem',      // 96px
+      '9xl': '7rem',      // 112px
     },
     extend: {
+      animation: {
+        'spin-slow': 'spin 10s linear infinite',
+      },
       colors: {
         primary: 'rgba(var(--primary), <alpha-value>)',
         secondary: 'rgba(var(--secondary), <alpha-value>)',

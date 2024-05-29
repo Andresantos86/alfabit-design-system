@@ -43,7 +43,7 @@ const ModalStoryChoice = (args: ModalProps) => {
         <Typography>Your changes will be lost</Typography>
         <div className=" flex flex-col gap-3">
           <Button>Save changes</Button>
-          <Button variant="secondary">Don't save</Button>
+          <Button variant="secondary">Do not save</Button>
         </div>
       </Modal>
     </>

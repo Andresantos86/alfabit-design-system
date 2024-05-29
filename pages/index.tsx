@@ -6,6 +6,9 @@ import Sidebar from "@/components/SideBar/Sidebar";
 import Switch from "@/components/Switch/Switch"
 import Typography from "@/components/Typography/Typography";
 import { useState } from "react";
+import { XMarkIcon } from "@heroicons/react/24/outline";
+import { Footer } from "@/components/Footer/Footer";
+import ForcaSenha from "@/components/ForcaSenha/ForcaSenha";
 
 
 
@@ -14,34 +17,19 @@ const App = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
-      <div className=" bg-gray-100 ">
-        <Sidebar />
-        <Accordion />
-        <main className="w-[calc(100%-3.73rem)] ml-auto flex">
-          <div className="2xl:container mx-auto space-y-6">
-            <div className="h-16 border-b border-gray-300/40 dark:border-gray-700">
 
 
-            </div>
-            <div className=" flex justify-center items-center rounded-2xl border border-dashed border-gray-300/40">
-
-              <div className="">
-                <span className="text-gray-500">Conteudo</span>
-                <Button className="m-2 " onClick={() => setIsOpen(true)}>Abrir Modal</Button>
-
-              </div>           
-
-            </div>
-            <div className="m-2">
-              <Card />
-            </div>
-          </div>
-        </main>
-      </div>
-
-
-
-
+      <main className=" h-full w-full container bg-gray-600">
+        <div>
+          <Accordion/>
+        </div>
+        <div className="bg-gray-200 m-2 p-2 flex justify-center ">
+          <ForcaSenha/>
+        </div>
+        <div className="flex ">
+          <Footer />
+        </div>
+      </main>
     </>
   )
 }
